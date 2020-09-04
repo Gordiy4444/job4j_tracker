@@ -15,8 +15,8 @@ else{
     }
 
         public static void main(String[] args) {
-            moStudent vasya = new noStudent();
+            Jukebox vasya = new Jukebox();
 
-            vasya.musicc(1);
+            vasya.musicc(3);
         }
 }
