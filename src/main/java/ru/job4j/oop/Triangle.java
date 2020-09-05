@@ -30,13 +30,13 @@ public class Triangle {
             double bc = second.distance(third);
             double p = period(ab, ac, bc);
             if (this.exist(ab, ac, bc)) {
-                Math.sqrt(p*(p-1)*(p-2)*(p-3));
+                Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
                 rsl = -1;
             }
             return rsl;
         }
     public static void main(String[] args) {
-        Triangle first = new Triangle(1, 2, 3);
+        Triangle first = new Triangle(2, 4, 6);
 
 }
     }
