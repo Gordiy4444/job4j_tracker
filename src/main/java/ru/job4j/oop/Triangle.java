@@ -13,14 +13,12 @@ public class Triangle {
         }
 
         public double period(double a, double b, double c) {
-            double p = - 1;
-            double p =(a + b + c)/2;
-            return p;
+            double X =(a + b + c)/2;
+            return X;
         }
 
 
         public boolean exist(double ab, double ac, double bc) {
-            boolean res = false;
             boolean res = ab + ac > bc && ac + bc > ab && ab + bc > ac;
             return res;
         }
@@ -32,10 +30,7 @@ public class Triangle {
             double bc = second.distance(third);
             double p = period(ab, ac, bc);
             if (this.exist(ab, ac, bc)) {
-              this.period(a, b, c);
-
-
-
+              this.period(1, 2 , 5);
                 rsl = -1;
             }
             return rsl;
