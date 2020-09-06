@@ -39,7 +39,7 @@ public class Triangle {
         Point two = new Point(2, 0);
         Point three = new Point(2, 2);
         Triangle t = new Triangle(one, two, three);
-        System.out.println(t);
+        System.out.println(t.area());
 
 
 
