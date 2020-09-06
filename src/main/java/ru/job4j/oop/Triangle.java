@@ -13,14 +13,13 @@ public class Triangle {
         }
 
         public double period(double a, double b, double c) {
-            double X =(a + b + c)/2;
-            return X;
+            return (a + b + c)/2;
+
         }
 
 
         public boolean exist(double ab, double ac, double bc) {
-            boolean res = ab + ac > bc && ac + bc > ab && ab + bc > ac;
-            return res;
+            return  ab + ac > bc && ac + bc > ab && ab + bc > ac;
         }
 
         public double area() {
@@ -31,12 +30,14 @@ public class Triangle {
             double p = period(ab, ac, bc);
             if (this.exist(ab, ac, bc)) {
                 Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
-                rsl = -1;
+
             }
             return rsl;
         }
     public static void main(String[] args) {
-        Triangle first = new Triangle(2, 4, 6);
+        Triangle first = new Triangle(2.0);
+        Triangle second = new Triangle(2.2);
+        Triangle third = new Triangle(0.2);
 
 }
     }
