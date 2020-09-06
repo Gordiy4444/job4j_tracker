@@ -35,9 +35,9 @@ public class Triangle {
             return rsl;
         }
     public static void main(String[] args) {
-        Triangle first = new Triangle(2.0);
-        Triangle second = new Triangle(2.2);
-        Triangle third = new Triangle(0.2);
+        Triangle first = new Triangle ((2.0), (2.2), (0.2))
+
+
 
 }
     }
