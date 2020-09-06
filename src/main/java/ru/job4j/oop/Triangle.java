@@ -35,7 +35,11 @@ public class Triangle {
             return rsl;
         }
     public static void main(String[] args) {
-        Triangle first = new Triangle ((2.0), (2.2), (0.2))
+        Point one = new Point(0, 0);
+        Point two = new Point(2, 0);
+        Point three = new Point(2, 2);
+        Triangle t = new Triangle(one, two, three);
+        System.out.println(t);
 
 
 
