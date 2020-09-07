@@ -11,12 +11,16 @@ public class Machine {
         int size = 0;
         int balance = money - price;
         for (int i = 0; i < COINS.length; i++)
-            while (balance >= COINS[i]){
+            while (balance >= COINS[i]) {
                 balance -= COINS[i];
-                rsl += COINS[i];
-                        size++;
+                size++;
             }
 
         return Arrays.copyOf(rsl, size);
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(change);
     }
 }
