@@ -22,6 +22,7 @@ public class Machine {
 
     public static void main(String[] args) {
        Machine money = new Machine();
-       money.change(50,35);
+      int [] rsl = money.change(50,35);
+        System.out.println(rsl);
     }
 }
