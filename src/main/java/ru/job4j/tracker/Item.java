@@ -4,15 +4,15 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Item {
-    private LocalDateTime created;
+    private LocalDateTime created = LocalDateTime.now();
     private int id;
     private String name;
-    public int now(){
-
-    }
 
     public int getId() {
         return id;
+    }
+    public LocalDateTime getter(){
+        return created;
     }
 
     public void setId(int id) {
