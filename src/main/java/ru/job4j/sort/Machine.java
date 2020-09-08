@@ -13,7 +13,7 @@ public class Machine {
         for (int i = 0; i < COINS.length; i++)
             while (balance >= COINS[i]) {
                 balance -= COINS[i];
-                size++;
+                rsl[size++] += COINS[i];
             }
 
         return Arrays.copyOf(rsl, size);
@@ -21,6 +21,7 @@ public class Machine {
 
 
     public static void main(String[] args) {
-        System.out.println(change);
+       Machine money = new Machine();
+       money.change(50,35);
     }
 }
