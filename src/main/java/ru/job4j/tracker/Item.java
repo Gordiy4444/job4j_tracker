@@ -9,19 +9,12 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-    private int id;
-    private String name;
+
+
     public int getId() {
         return id;
     }
-    public Item() {
-    }
 
-    public Item( int id) {
-    }
-    public Item (int id, String name){
-
-    }
 
     public static void main(String[] args) {
         Item item = new Item();
