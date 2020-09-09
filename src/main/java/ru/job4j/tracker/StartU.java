@@ -9,7 +9,7 @@ public class StartU {
         LocalDateTime current = item.getCreated();
         System.out.println(current);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-
-        System.out.println(formatter);
+        String currentDateTimeFormat = current.format(formatter);
+        System.out.println(currentDateTimeFormat);
     }
 }
