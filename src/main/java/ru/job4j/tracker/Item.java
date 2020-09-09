@@ -9,7 +9,22 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+    public Item() {
 
+    }
+
+
+
+    public Item( int id) {
+      this.id = 3;
+    }
+
+    public Item (int id, String name){
+    this.id = 3;
+    this.name = "b";
+
+
+    }
 
     public int getId() {
         return id;
