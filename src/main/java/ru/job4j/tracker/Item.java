@@ -16,12 +16,12 @@ public class Item {
 
 
     public Item( int id) {
-      this.id = 3;
+      this.id = id;
     }
 
     public Item (int id, String name){
-    this.id = 3;
-    this.name = "b";
+    this.id = id;
+    this.name = name;
 
 
     }
