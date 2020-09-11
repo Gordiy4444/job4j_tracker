@@ -15,7 +15,8 @@ public class Item {
 
 
 
-    public Item( int id) {
+
+    public Item(int id) {
       this.id = id;
     }
 
@@ -55,5 +56,15 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                ", formatter=" + formatter +
+                '}';
     }
 }
