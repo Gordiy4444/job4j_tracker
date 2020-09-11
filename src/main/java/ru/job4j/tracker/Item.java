@@ -66,5 +66,6 @@ public class Item {
                 ", created=" + created +
                 ", formatter=" + formatter +
                 '}';
+
     }
 }
