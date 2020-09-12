@@ -21,7 +21,7 @@ for (int index = 0; index < boo.length; index ++){
         boo[0] = boo[3];
         boo[3] = bucket;
         for (int index = 0; index < boo.length; index++)
-            Book b = boo[index];
+            Book bo = boo[index];
         System.out.println(oo.getN);
     }
 
