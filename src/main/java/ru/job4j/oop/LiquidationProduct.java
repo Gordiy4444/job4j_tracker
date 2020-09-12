@@ -6,8 +6,4 @@ public final class LiquidationProduct {
     public LiquidationProduct(String name, int price) {
         product = new Product(name, price);
     }
-
-    public String label() {
-        return product.label();
-    }
 }
