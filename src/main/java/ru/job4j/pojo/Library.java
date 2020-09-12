@@ -27,9 +27,8 @@ for (int index = 0; index < boo.length; index ++){
    System.out.println("CC");
         for(int index = 0; index < boo.length; index++) {
             Book oo = boo[index];
-            if (oo.getCount() == "Clean code".equals();{
+            if (oo.getName().equals("Clean code"))
             System.out.println(oo.getName() + " - " + oo.getCount());
   }
-}
 }
 }
