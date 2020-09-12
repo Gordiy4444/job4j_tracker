@@ -8,7 +8,7 @@ public class Config {String name;
         this.name = name;
     }
 
-    void print() {
+    public void print() {
         System.out.println(position);
     }
 
