@@ -20,9 +20,16 @@ for (int index = 0; index < boo.length; index ++){
         Book bucket = boo[0];
         boo[0] = boo[3];
         boo[3] = bucket;
-        for (int index = 0; index < boo.length; index++)
+        for (int index = 0; index < boo.length; index++){
             Book oo = boo[index];
             System.out.println(oo.getName() + " - " + oo.getCount());
     }
-
+   System.out.println("CC");
+        for(int index = 0; index < boo.length; index++) {
+            Book oo = boo[index];
+            if (oo.getCount() == "Clean code".equals();{
+            System.out.println(oo.getName() + " - " + oo.getCount());
+  }
+}
+}
 }
