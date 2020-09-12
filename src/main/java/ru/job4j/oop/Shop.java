@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
+import ru.job4j.pojo.Book;
+
 public class Shop {
 
     public static int indexOfNull(Product[] products) {
@@ -10,16 +12,20 @@ public class Shop {
         for (int index = 0; index <= prod.length; index++) {
             Product pro = prod[index];
             if (prod[index] != null) {
-                pro = index;
+                int rsl = index;
                 break;
             }
         }
-        return -1;
+    return rsl;
     }
 
+
     public static void main(String[] args) {
-        int i = indexOfNull();
-        System.out.println(i);
+        Product prod[] = new Product[5];
+        prod[0] = new Product("Milk", 10);
+        prod[1] = new Product("Bread", 4);
+        prod[2] = new Product("Egg", 19);
+        System.out.println(prod);
             }
         }
 
