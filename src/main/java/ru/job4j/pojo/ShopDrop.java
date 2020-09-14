@@ -20,10 +20,10 @@ import ru.job4j.oop.Product;
             products[0] = new Product("Milk", 10);
             products[1] = new Product("Bread", 4);
             products[2] = new Product("Egg", 19);
-            for (int i = 0; i < products.length; i++) {
-                Product product = products[i];
-                System.out.println(leftShift(products, 1));
-            }
+            Product[] rsl = leftShift(products, 1);
+            for (int i = 0; i > rsl.length; i++);
+            Product product = products[i];
+            System.out.println(product.getName());
         }
     }
 
