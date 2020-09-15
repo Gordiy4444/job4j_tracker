@@ -24,7 +24,6 @@ import ru.job4j.oop.Product;
                 products[i] = products[i + 1];
             }
                 products[products.length - 1] = null;
-            System.out.println(product.getName());
 
         }
     }
