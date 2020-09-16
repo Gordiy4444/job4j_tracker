@@ -47,17 +47,10 @@ public class Tracker {
     }
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        boolean size = false;
-        for (int i = 0; i < this.size; i++) {
-            Item name = items[i];
-            if (name = id) {
-                item[size] = name;
-                size++;
-            }
-        }
+        index = index != -1 ? item[id] : null;
+
         return  true;
 
     }
 
     }
-}
