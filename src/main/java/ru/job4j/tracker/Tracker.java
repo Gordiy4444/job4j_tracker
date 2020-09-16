@@ -35,6 +35,7 @@ public class Tracker {
         int index = indexOf(id);
         return index != -1 ? items[index] : null;
     }
+
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
@@ -45,6 +46,7 @@ public class Tracker {
         }
         return rsl;
     }
+
     public boolean replace(int id, Item item) {
         boolean rsl = false;
         int index = indexOf(id);
@@ -55,4 +57,17 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public boolean delete(int id) {
+        boolean res = false;
+        int index = indexOf(id);
+        int start = index + 1;
+        int distPos = index;
+        int length = size - index;
+        items[size - 1] = null;
+        size--;
+        res = true;
+        return res;
+    }
+
     }
