@@ -14,26 +14,14 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] namesWithoutNull = new Item[items.length];
-        int size = 0;
-        for (int index = 0; index < items.length; index++) {
-            Item name = items[index];
-            if (name != null) {
-                namesWithoutNull[size] = name;
-                size++;
-            }
-        }
-        namesWithoutNull = Arrays.copyOf(namesWithoutNull, size);
-
-        for (int index = 0; index < namesWithoutNull.length; index++)
-            return Arrays.copyOf(items, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
         Item[] names = new Item[this.size];
         int size = 0;
         for (int index = 0; index < this.size; index++) {
-            Item name = size[index];
+            Item name = items[index];
             if (name.getName().equals(key)) {
                 names[size] = name;
                 size++;
