@@ -5,17 +5,14 @@ import java.util.Scanner;
 public class Dendy {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        boolean run = true;
-        int rsl = 11;
-        while ( run) {
+        int run = 11;
+        while (run > 0) {
             System.out.println("Игра");
 
             int select = Integer.valueOf(input.nextLine());
-            } if (select == 1) {
-                rsl = rsl - 1;
-                  if (rsl = 0);{
-                      run = false;
-            }
+            if (select == 3) {
+                run = run - 3;
+
 
 
             } if (select == 2) {
