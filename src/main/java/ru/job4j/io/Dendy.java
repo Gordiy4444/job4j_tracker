@@ -10,17 +10,21 @@ public class Dendy {
         while (run > 0) {
             System.out.println("Игра");
             int select = Integer.valueOf(input.nextLine());
+            String name = player ? "игрок_1" : "игрок_2";
             if(select >= 1 && select <= 3) {
                 run -= select;
-            }
+                if (run <= 0) {
+                    System.out.println("Победил игрок: " + name);
+                    break;
+                    player = !player;
+                }
             else {
                 System.out.println("неверные данные");
-                select = Integer.valueOf(input.nextLine());
+                Integer.valueOf(input.nextLine());
             if (run == 0){
                 player = !player;
                 System.out.println(player);
             }
-            String name = player ? "игрок_1" : "игрок_2";
         }
             System.out.println();
         }
