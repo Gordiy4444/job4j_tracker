@@ -24,7 +24,37 @@ public class StartUI {
 
             }
             else if (select == 2) {
-                int id = scanner.nextLine();
+                int id = Integer.parseInt(scanner.nextLine());
+                int name = Integer.parseInt(scanner.nextLine());
+                Item it = new Item(name);
+                tracker.replace(id, it);
+                if (tracker.replace(id, it)) {
+                    System.out.println("Оперция успешна");
+                } else {
+                    System.out.println("Оперция не успешна");
+                }
+            }
+            else if (select == 3) {
+                int idDel = Integer.parseInt(scanner.nextLine());
+                tracker.delete(idDel);
+                Item it = new Item();
+                if (tracker.replace(idDel, it)) {
+                    System.out.println("Оперция успешна");
+                } else {
+                    System.out.println("Оперция не успешна");
+                }
+            }
+            else if (select == 4) {
+                int idSe = Integer.parseInt(scanner.nextLine());
+                Item[] ite = tracker.findById(idSe);
+                for (int i = 0; i < ite.length; i++){
+                    System.out.println(ite[i]);
+                }
+                if (tracker.replace(idSe, ite)) {
+                    System.out.println("Оперция успешна");
+                } else {
+                    System.out.println("Оперция не успешна");
+                }
             }
               else if (select == 6) {
                 run = false;
