@@ -17,8 +17,16 @@ public class StartUI {
                 Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
-                tracker.findAll(item);
-            } else if (select == 6) {
+                Item[] items = tracker.findAll();
+                for (int i = 0; i < items.length; i++){
+                    System.out.println(items[i]);
+                }
+
+            }
+            else if (select == 2) {
+                scanner.findByid
+            }
+              else if (select == 6) {
                 run = false;
             }
         }
