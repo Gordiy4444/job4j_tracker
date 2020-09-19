@@ -24,7 +24,7 @@ public class StartUI {
 
             }
             else if (select == 2) {
-                scanner.findByid
+                int id = scanner.nextLine();
             }
               else if (select == 6) {
                 run = false;
