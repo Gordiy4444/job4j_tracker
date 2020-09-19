@@ -17,7 +17,7 @@ public class StartUI {
                 Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
-                tracker.add(item);
+                tracker.findAll(item);
             } else if (select == 6) {
                 run = false;
             }
