@@ -26,7 +26,6 @@ public class StartUI {
                 int id = Integer.parseInt(scanner.nextLine());
                 int name = Integer.parseInt(scanner.nextLine());
                 Item it = new Item(name);
-                tracker.replace(id, it);
                 if (tracker.replace(id, it)) {
                     System.out.println("Оперция успешна");
                 } else {
@@ -35,8 +34,8 @@ public class StartUI {
             }
             else if (select == 3) {
                 int idDel = Integer.parseInt(scanner.nextLine());
-                tracker.delete(idDel);
                 Item it = new Item();
+                tracker.delete(idDel);
                 if (tracker.replace(idDel, it)) {
                     System.out.println("Оперция успешна");
                 } else {
@@ -54,8 +53,8 @@ public class StartUI {
             }
                 else if (select == 5) {
                 int idR = Integer.parseInt(scanner.nextLine());
-                tracker.findByName(items[i]);
-                Item[] iti = tracker.findByName();
+                tracker.findByName(idR);
+                Item[] iti = tracker.findByName(idR);
                 for (int i = 0; i < iti.length; i++) {
                     if (iti.length > 0) {
                         System.out.println(iti[i]);
