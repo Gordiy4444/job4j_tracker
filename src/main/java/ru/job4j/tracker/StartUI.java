@@ -34,7 +34,6 @@ public class StartUI {
             }
             else if (select == 3) {
                 int idDel = Integer.parseInt(scanner.nextLine());
-                tracker.delete(idDel);
                 if (tracker.delete(idDel)) {
                     System.out.println("Оперция успешна");
                 } else {
