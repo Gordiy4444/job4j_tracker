@@ -34,9 +34,8 @@ public class StartUI {
             }
             else if (select == 3) {
                 int idDel = Integer.parseInt(scanner.nextLine());
-                Item it = new Item();
                 tracker.delete(idDel);
-                if (tracker.replace(idDel, it)) {
+                if (tracker.delete(idDel)) {
                     System.out.println("Оперция успешна");
                 } else {
                     System.out.println("Оперция не успешна");
@@ -52,15 +51,16 @@ public class StartUI {
                 }
             }
                 else if (select == 5) {
-                int idR = Integer.parseInt(scanner.nextLine());
+                String idR = scanner.nextLine();
                 tracker.findByName(idR);
                 Item[] iti = tracker.findByName(idR);
-                for (int i = 0; i < iti.length; i++) {
                     if (iti.length > 0) {
-                        System.out.println(iti[i]);
+                        for (int i = 0; i < iti.length; i++) {
+                            System.out.println(iti[i]);
+                        }
                     } else {
                         System.out.println("Заявки с таким именем не найдены");
-                    }
+
                 }
             }
 
