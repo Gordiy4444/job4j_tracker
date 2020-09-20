@@ -53,15 +53,17 @@ public class StartUI {
                 }
             }
                 else if (select == 5) {
-                    int idR = Integer.parseInt(scanner.nextLine());
-                    tracker.findByName(items[i]);
-                    Item iti = new Item();
-                    if (tracker.findByName(idR)) {
-                        System.out.println("Оперция успешна");
+                int idR = Integer.parseInt(scanner.nextLine());
+                tracker.findByName(items[i]);
+                Item[] iti = tracker.findByName();
+                for (int i = 0; i < iti.length; i++) {
+                    if (iti.length > 0) {
+                        System.out.println(iti[i]);
                     } else {
-                        System.out.println("Оперция не успешна");
+                        System.out.println("Заявки с таким именем не найдены");
                     }
                 }
+            }
 
                      else if (select == 6) {
                          run = false;
