@@ -18,10 +18,9 @@ public class StartUI {
                 tracker.add(item);
             } else if (select == 1) {
                 Item[] items = tracker.findAll();
-                for (int i = 0; i < items.length; i++){
+                for (int i = 0; i < items.length; i++) {
                     System.out.println(items[i]);
                 }
-
             }
             else if (select == 2) {
                 int id = Integer.parseInt(scanner.nextLine());
@@ -46,18 +45,26 @@ public class StartUI {
             }
             else if (select == 4) {
                 int idSe = Integer.parseInt(scanner.nextLine());
-                Item[] ite = tracker.findById(idSe);
-                for (int i = 0; i < ite.length; i++){
-                    System.out.println(ite[i]);
-                }
-                if (tracker.replace(idSe, ite)) {
-                    System.out.println("Оперция успешна");
+                Item ite = tracker.findById(idSe);
+                if (ite != null) {
+                    System.out.println(ite);
                 } else {
-                    System.out.println("Оперция не успешна");
+                    System.out.println("Заявка не найдена");
                 }
             }
-              else if (select == 6) {
-                run = false;
+                else if (select == 5) {
+                    int idR = Integer.parseInt(scanner.nextLine());
+                    tracker.findByName(items[i]);
+                    Item iti = new Item();
+                    if (tracker.findByName(idR)) {
+                        System.out.println("Оперция успешна");
+                    } else {
+                        System.out.println("Оперция не успешна");
+                    }
+                }
+
+                     else if (select == 6) {
+                         run = false;
             }
         }
     }
