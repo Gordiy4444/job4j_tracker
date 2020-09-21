@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class StartUI {
 
-    public void init(Scanner scanner, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = false;
         while (run) {
             this.showMenu();
             System.out.print("Select: ");
-            int select = Integer.valueOf(scanner.nextLine());
+            int select = Integer.valueOf(input.askStr(msg));
             if (select == 0) {
                 System.out.println("=== Create a new Item ====");
                 System.out.print("Enter name: ");
-                String name = scanner.nextLine();
+                String name = input.askStr(msg);
                 Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
@@ -23,8 +23,8 @@ public class StartUI {
                 }
             }
             else if (select == 2) {
-                int id = Integer.parseInt(scanner.nextLine());
-                int name = Integer.parseInt(scanner.nextLine());
+                int id = Integer.parseInt(input.askStr(msg));
+                int name = Integer.parseInt(input.askStr(msg));
                 Item it = new Item(name);
                 if (tracker.replace(id, it)) {
                     System.out.println("Оперция успешна");
@@ -33,7 +33,7 @@ public class StartUI {
                 }
             }
             else if (select == 3) {
-                int idDel = Integer.parseInt(scanner.nextLine());
+                int idDel = Integer.parseInt(input.askStr(msg));
                 if (tracker.delete(idDel)) {
                     System.out.println("Оперция успешна");
                 } else {
@@ -41,7 +41,7 @@ public class StartUI {
                 }
             }
             else if (select == 4) {
-                int idSe = Integer.parseInt(scanner.nextLine());
+                int idSe = Integer.parseInt(input.askStr(msg));
                 Item ite = tracker.findById(idSe);
                 if (ite != null) {
                     System.out.println(ite);
@@ -50,7 +50,7 @@ public class StartUI {
                 }
             }
                 else if (select == 5) {
-                String idR = scanner.nextLine();
+                String idR = input.askStr(msg);
                 tracker.findByName(idR);
                 Item[] iti = tracker.findByName(idR);
                     if (iti.length > 0) {
@@ -81,8 +81,8 @@ public class StartUI {
 
 
         public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+            Input input = new ConsoleInput();
             Tracker tracker = new Tracker();
-            new StartUI().init(scanner, tracker);
+            new StartUI().init(input, tracker);
         }
-    }
+        }
