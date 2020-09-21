@@ -9,11 +9,11 @@ public class StartUI {
         while (run) {
             this.showMenu();
             System.out.print("Select: ");
-            int select = Integer.valueOf(input.askStr(msg));
+            int select = Integer.valueOf(input.askStr("Select"));
             if (select == 0) {
                 System.out.println("=== Create a new Item ====");
                 System.out.print("Enter name: ");
-                String name = input.askStr(msg);
+                String name = input.askStr("name");
                 Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
@@ -23,8 +23,8 @@ public class StartUI {
                 }
             }
             else if (select == 2) {
-                int id = Integer.parseInt(input.askStr(msg));
-                int name = Integer.parseInt(input.askStr(msg));
+                int id = Integer.parseInt(input.askStr("id"));
+                int name = Integer.parseInt(input.askStr("name"));
                 Item it = new Item(name);
                 if (tracker.replace(id, it)) {
                     System.out.println("Оперция успешна");
@@ -33,7 +33,7 @@ public class StartUI {
                 }
             }
             else if (select == 3) {
-                int idDel = Integer.parseInt(input.askStr(msg));
+                int idDel = Integer.parseInt(input.askStr("idDel"));
                 if (tracker.delete(idDel)) {
                     System.out.println("Оперция успешна");
                 } else {
@@ -41,7 +41,7 @@ public class StartUI {
                 }
             }
             else if (select == 4) {
-                int idSe = Integer.parseInt(input.askStr(msg));
+                int idSe = Integer.parseInt(input.askStr("idSe"));
                 Item ite = tracker.findById(idSe);
                 if (ite != null) {
                     System.out.println(ite);
@@ -50,7 +50,7 @@ public class StartUI {
                 }
             }
                 else if (select == 5) {
-                String idR = input.askStr(msg);
+                String idR = input.askStr("idR");
                 tracker.findByName(idR);
                 Item[] iti = tracker.findByName(idR);
                     if (iti.length > 0) {
