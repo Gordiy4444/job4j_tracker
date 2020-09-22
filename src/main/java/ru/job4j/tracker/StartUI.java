@@ -15,17 +15,16 @@ public class StartUI {
         Item item = new Item(name);
         tracker.add(item);
     }
-    public static void replaceItem (Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         int id = Integer.parseInt(input.askStr("id"));
-        int name = Integer.parseInt(input.askStr("name"));
+        String name = input.askStr("name");
         Item it = new Item(name);
         if (tracker.replace(id, it)) {
-            System.out.println("Оперция успешна");
+            System.out.println("Операция успешна");
         } else {
-            System.out.println("Оперция не успешна");
+            System.out.println("Операция не успешна");
         }
     }
-
     public static void deleteItem(Input input, Tracker tracker) {
         int idDel = Integer.parseInt(input.askStr("idDel"));
         if (tracker.delete(idDel)) {
