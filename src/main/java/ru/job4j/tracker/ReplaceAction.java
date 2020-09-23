@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class ReplaceAction implements UserAction {
     @Override
     public String name(){
-        return null;
+        return "Replace item";
     }
 
 
@@ -17,7 +17,7 @@ public class ReplaceAction implements UserAction {
             } else {
                 System.out.println("Операция не успешна");
             }
-            return false;
+            return true;
         }
     }
 

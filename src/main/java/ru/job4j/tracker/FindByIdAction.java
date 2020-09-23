@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class FindByIdAction implements UserAction {
     @Override
     public String name() {
-        return null;
+        return "FindById item";
     }
 
     @Override
@@ -16,6 +16,6 @@ public class FindByIdAction implements UserAction {
             System.out.println("Заявка не найдена");
         }
 
-        return false;
+        return true;
     }
 }

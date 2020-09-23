@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class FindByNameAction implements UserAction{
     @Override
     public String name() {
-        return null;
+        return "FindByName item";
     }
 
     @Override
@@ -18,6 +18,6 @@ public class FindByNameAction implements UserAction{
         }    else{
             System.out.println("Заявки с таким именем не найдены");
         }
-        return false;
+        return true;
     }
 }
