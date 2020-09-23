@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class DeleteCreate implements UserAction {
+public class DeleteAction implements UserAction{
     @Override
     public String name() {
         return null;
@@ -14,7 +14,6 @@ public class DeleteCreate implements UserAction {
         } else {
             System.out.println("Оперция не успешна");
         }
-
         return false;
     }
 }
