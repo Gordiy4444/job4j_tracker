@@ -17,7 +17,7 @@ public class StartUITest {
         Output put = new ConsoleOutput();
         UserAction[] actions = {
                 new CreateAction(put),
-                new ExitAction()
+                new ExitAction(put)
         };
         Output output = new ConsoleOutput();
 
@@ -33,9 +33,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0",String.valueOf(item.getId()),replacedName, "1"}
         );
+        Output put = new ConsoleOutput();
         UserAction[] actions = {
-                new ReplaceAction(),
-                new ExitAction()
+                new ReplaceAction(put),
+                new ExitAction(put)
         };
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
@@ -51,9 +52,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0" , String.valueOf(item.getId()), "1"}
         );
+        Output put = new ConsoleOutput();
         UserAction[] actions = {
-                new DeleteAction(),
-                new ExitAction()
+                new DeleteAction(put),
+                new ExitAction(put)
         };
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
