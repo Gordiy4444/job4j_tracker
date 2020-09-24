@@ -31,7 +31,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", "1"}
+                new String[] {"0",String.valueOf(item.getId()),replacedName, "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(),
@@ -39,7 +39,7 @@ public class StartUITest {
         };
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()), is(replacedName));
+        assertThat(tracker.findById(item.getId()).getName()), is(replacedName));
     }
 
     @Test
