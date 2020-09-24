@@ -17,9 +17,9 @@ public class FindByIdAction implements UserAction {
         int idSe = Integer.parseInt(input.askStr("idSe"));
         Item ite = tracker.findById(idSe);
         if (ite != null) {
-            System.out.println(ite);
+            out.println(ite);
         } else {
-            System.out.println("Заявка не найдена");
+            out.println("Заявка не найдена");
         }
 
         return true;
