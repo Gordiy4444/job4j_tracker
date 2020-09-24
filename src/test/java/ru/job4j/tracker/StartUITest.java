@@ -45,7 +45,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Deleted item"));
 
         Input in = new StubInput(
-                new String[] {"0" , "idDel", "1"}
+                new String[] {"0" , "item.getId()", "1"}
         );
         UserAction[] actions = {
                 new DeleteAction(),
