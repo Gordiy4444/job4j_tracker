@@ -76,11 +76,7 @@ public class StartUITest {
         };
         new StartUI(output).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is("Menu." + ln
-                + "0. FindAll item" + ln
-                + "1. Exit" + ln + item + ln
-                + "Menu." + ln + "0. FindAll item" + ln
-                + "1. Exit" + ln));
+        assertThat(output.toString(), is(""));
     }
 
     @Test
@@ -89,7 +85,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find"));
         Input in = new StubInput(
-                new String[]{"0",String.valueOf(item.getId()),"1"}
+                new String[]{"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new FindByIdAction(output),
@@ -97,15 +93,20 @@ public class StartUITest {
         };
         new StartUI(output).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is(item.getId()));
+        assertThat(output.toString(), is( "Menu." + ln
+                + "0. FindById item" + ln
+                + "1. Exit" + ln + item + ln
+                + "Menu." + ln + "0. FindById item" + ln
+                + "1. Exit" + ln));
     }
+
     @Test
     public void whenFindByName() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find"));
         Input in = new StubInput(
-                new String[]{"0",String.valueOf(item.getName()), "1"}
+                new String[]{"0", String.valueOf(item.getName()), "1"}
         );
         UserAction[] actions = {
                 new FindByNameAction(output),
@@ -113,6 +114,10 @@ public class StartUITest {
         };
         new StartUI(output).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is(item.getName()));
+        assertThat(output.toString(), is("Menu." + ln
+                + "0. FindByName item" + ln
+                + "1. Exit" + ln + item + ln
+                + "Menu." + ln + "0. FindByName item" + ln
+                + "1. Exit" + ln));
     }
 }
