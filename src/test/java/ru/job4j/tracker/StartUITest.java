@@ -77,7 +77,7 @@ public class StartUITest {
 
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
-        assertThat(tracker.add(item), is(item));
+        assertThat(put.toString(), is("ru.job4j.tracker.ConsoleOutput@7f63425a"));
     }
 }
 
