@@ -64,10 +64,15 @@ public class StartUITest {
 
     @Test
     public void whenFindAll() {
+
+ }
+
+    @Test
+    public void whenFinByName() {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find"));
         Input in = new StubInput(
-                new String[]{"0", "1"}
+                new String[]{"0","name", "1"}
         );
         Output put = new ConsoleOutput();
         UserAction[] actions = {
@@ -77,6 +82,6 @@ public class StartUITest {
 
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
-        assertThat(tracker.add(), is());
- }
+        assertThat(tracker.add(item), is(item));
+    }
 }
