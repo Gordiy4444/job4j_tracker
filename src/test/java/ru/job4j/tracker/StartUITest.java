@@ -95,6 +95,18 @@ public class StartUITest {
         assertThat(put.toString(), is(""));
 
     }
-
-
+    @Test
+    public void whenFindByName() {
+        Tracker tracker = new Tracker();
+        Output put = new ConsoleOutput();
+        Input in = new StubInput(
+                new String[]{"0", "1"}
+        );
+        UserAction[] actions = {
+                new FindByNameAction(put),
+                new ExitAction(put)
+        };
+        new StartUI(put).init(in, tracker, actions);
+        assertThat(put.toString(), is(""));
+    }
 }
