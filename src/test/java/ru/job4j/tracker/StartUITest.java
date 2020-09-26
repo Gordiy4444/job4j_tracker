@@ -77,7 +77,24 @@ public class StartUITest {
 
         Output output = new ConsoleOutput();
         new StartUI(output).init(in, tracker, actions);
-        assertThat(put.toString(), is("ru.job4j.tracker.ConsoleOutput@7f63425a"));
+        assertThat(put.toString(), is(""));
     }
-}
 
+    @Test
+    public void whenFindById() {
+        Tracker tracker = new Tracker();
+        Output put = new ConsoleOutput();
+        Input in = new StubInput(
+                new String[]{"0", "1"}
+        );
+        UserAction[] actions = {
+                new FindByIdAction(put),
+                new ExitAction(put)
+        };
+        new StartUI(put).init(in, tracker, actions);
+        assertThat(put.toString(), is(""));
+
+    }
+
+
+}
