@@ -9,13 +9,16 @@ public class FindEl {
                 break;
 
             }
+
+        }
             if (rsl == -1) {
                 throw new ElementNotFoundException("it is impossible without an element");
             }
-        }
             return rsl;
+
         }
-        }
+    }
+
 
 
 
