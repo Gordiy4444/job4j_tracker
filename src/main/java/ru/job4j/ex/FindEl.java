@@ -6,15 +6,17 @@ public class FindEl {
         for (int index = 0; index < value.length; index++) {
             if (value[index].equals(key)) {
                 rsl = index;
+                break;
+
+            }
+            if (rsl == -1) {
+                throw new ElementNotFoundException("it is impossible without an element");
             }
         }
-        return rsl;
-        break;
-    }
-            if (rsl == -1){
-        throw new ElementNotFoundException("it is impossible without an element");
-    }
-    }
+            return rsl;
+        }
+        }
+
 
 
 
