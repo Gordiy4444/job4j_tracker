@@ -18,22 +18,28 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        for (int index = 0; index < users.length; index++) {
-            String el = users[index];
-            if (user.isValid() == false && el.length < 3) {
-                 throw new UserInvalidException("");
-            }
-        }
-            return true;
+        if (!user.isValid() || user.getUsername().length() < 3) {
+            throw new UserInvalidException("");
         }
 
+        return true;
+    }
+
     public static void main(String[] args) {
-        User[] users = {
-                new User("Petr Arsentev", true)
-        };
-        User user = findUser(users, "Petr Arsentev");
-        if (validate(user)) {
-            System.out.println("This user has an access");
+        try {
+            User[] users = {
+                    new User("Petr Arsentev", true)
+            };
+            User user = findUser(users, "Petr Arsentev");
+            if (validate(user)) {
+                System.out.println("This user has an access");
+            }
+        } catch (UserNotFoundException a) {
+            a.printStackTrace();
+            System.out.println("User not found");
+        } catch (UserInvalidException b) {
+            b.printStackTrace();
+            System.out.println("The user is not valid.");
         }
     }
 }
