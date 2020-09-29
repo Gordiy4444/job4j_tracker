@@ -4,7 +4,7 @@ public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         int rsl = -1;
         for (int index = 0; index < users.length; index++) {
-            if (users[index].equals(login)) {
+            if (users[index].getUsername().equals(login)) {
                 rsl = index;
                 break;
 
@@ -14,13 +14,18 @@ public class UserStore {
         if (rsl == -1) {
             throw new UserNotFoundException("it is impossible without an element");
         }
-        return null;
+        return users[rsl];
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user != valid && username < 3)
-        return false;
-    }
+        for (int index = 0; index < users.length; index++) {
+            String el = users[index];
+            if (user.isValid() == false && el.length < 3) {
+                 throw new UserInvalidException("");
+            }
+        }
+            return true;
+        }
 
     public static void main(String[] args) {
         User[] users = {
