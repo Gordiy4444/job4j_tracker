@@ -1,0 +1,21 @@
+package ru.job4j.tracker;
+
+public class TrackerSingleThree {
+    private TrackerSingleThree() {
+    }
+
+    public static TrackerSingleThree getInstance() {
+        return Holder.INSTANCE;
+    }
+
+
+    private static final class Holder {
+        private static final TrackerSingleThree INSTANCE = new TrackerSingleThree();
+    }
+
+    public static void main(String[] args) {
+        TrackerSingleThree tracker = TrackerSingleThree.getInstance();
+    }
+}
+
+
