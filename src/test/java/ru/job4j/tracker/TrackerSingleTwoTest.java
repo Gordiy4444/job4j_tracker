@@ -10,7 +10,9 @@ public class TrackerSingleTwoTest {
     public void whenTrackerSingleTwo() {
         TrackerSingle one = TrackerSingle.INSTANCE;
         TrackerSingle two = TrackerSingle.INSTANCE;
+        one.getInstance();
+        two.getInstance();
 
-        assertSame(one, two);
+        assertSame(one.getInstance(), two.getInstance());
     }
 }
