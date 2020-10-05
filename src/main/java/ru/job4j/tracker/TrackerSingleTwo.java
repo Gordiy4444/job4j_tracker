@@ -2,6 +2,11 @@ package ru.job4j.tracker;
 
 public class TrackerSingleTwo {
     private static final TrackerSingleTwo INSTANCE = new TrackerSingleTwo();
+    private Tracker inst;
+
+    public Tracker getInst() {
+        return inst;
+    }
 
     private TrackerSingleTwo() {
     }
