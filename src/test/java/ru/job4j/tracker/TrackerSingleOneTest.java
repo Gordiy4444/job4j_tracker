@@ -8,10 +8,8 @@ import static org.junit.Assert.assertSame;
 public class TrackerSingleOneTest  {
     @Test
     public void whenTrackerSingleOne(){
-        TrackerSingle one = TrackerSingle.INSTANCE;
-        TrackerSingle two = TrackerSingle.INSTANCE;
-        one.getInstance();
-        two.getInstance();
+        TrackerSingleOne one = TrackerSingleOne.getInstance();
+        TrackerSingleOne two = TrackerSingleOne.getInstance();
 
         assertSame(one.getInstance(), two.getInstance());
     }
