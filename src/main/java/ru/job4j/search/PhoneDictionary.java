@@ -11,7 +11,7 @@ public class PhoneDictionary {
 
         public void search(String key, Person person){
             for ( Person per : persons) {
-                if (per != persons.contains(key) )
+                if (persons.contains(key) )
                 System.out.println(per);
             }
 
