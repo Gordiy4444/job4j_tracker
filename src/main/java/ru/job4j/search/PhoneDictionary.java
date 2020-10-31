@@ -9,15 +9,13 @@ public class PhoneDictionary {
             this.persons.add(person);
         }
 
-        public void search(String key){
-            for ( Person per : persons) {
-                if (per.getName().contains(key) || per.getSurname().contains(key) || per.getAddress().contains(key) || per.getPhone().contains(key))
-                System.out.println(per);
-            }
-
-        }
         public ArrayList<Person> find(String key) {
             ArrayList<Person> result = new ArrayList<>();
+            for ( Person per : persons) {
+                if (per.getName().contains(key) || per.getSurname().contains(key) || per.getAddress().contains(key) || per.getPhone().contains(key))
+                    result.add(per);
+                    System.out.println(per);
+            }
             return result;
         }
 
@@ -25,6 +23,8 @@ public class PhoneDictionary {
         ArrayList<Person> names = new ArrayList<Person>();
         names.add(new Person("Petr", "Arsentev", "534872","Bryansk"));
         names.add(new Person("Dmitriy", "Gordeev", "98765", "Samara"));
+        main("Gor");
+
         for (Object value : names) {
             System.out.println(value);
         }
