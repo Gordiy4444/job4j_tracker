@@ -20,14 +20,14 @@ public class PhoneDictionary {
         }
 
     public static void main(String[] args) {
-        ArrayList<Person> names = new ArrayList<Person>();
-        names.add(new Person("Petr", "Arsentev", "534872","Bryansk"));
-        names.add(new Person("Dmitriy", "Gordeev", "98765", "Samara"));
-        main("Gor");
-
-        for (Object value : names) {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(new Person("Petr", "Arsentev", "534872","Bryansk"));
+        phones.add(new Person("Dmitriy", "Gordeev", "98765", "Samara"));
+        for (Person value : phones.find("Gor")){
             System.out.println(value);
         }
+
+        }
     }
-    }
+
 
