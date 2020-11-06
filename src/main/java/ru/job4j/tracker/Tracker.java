@@ -1,9 +1,10 @@
 package ru.job4j.tracker;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
+    private final List<Item> items = new Item[100];
     private int ids = 1;
     private int size = 0;
 
@@ -21,7 +22,7 @@ public class Tracker {
         Item[] names = new Item[this.size];
         int size = 0;
         for (int index = 0; index < this.size; index++) {
-            Item name = items[index];
+            Item name = items.get(index);
             if (name.getName().equals(key)) {
                 names[size] = name;
                 size++;
