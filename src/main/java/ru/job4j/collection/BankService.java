@@ -10,10 +10,10 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-       return users.put();
+       return users.putIfAbsent(user, new ArrayList<>());
         }
 
-    }
+
 
 
     public void addAccount(String passport, Account account) {
