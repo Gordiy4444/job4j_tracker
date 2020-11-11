@@ -13,7 +13,7 @@ public class UniqueText {
             ab.split("");
         }
         for (String vg : text)
-            vg.contains(check);
+            rsl = check.contains(vg);
         return rsl;
     }
 }
