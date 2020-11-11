@@ -10,12 +10,9 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        boolean rsl = false;
-        if (!users.containsKey(user)) {
-            users.put(user.getPassport(), user.getUsername());
-            rsl = true;
+       return users.put();
         }
-        return rsl;
+
     }
 
 
