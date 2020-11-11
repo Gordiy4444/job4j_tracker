@@ -5,15 +5,13 @@ import java.util.HashSet;
 import java.util.List;
 
 public class FullSearch {
-    public static HashSet<Task> extractNumber(List<Task> list) {
-        HashSet<Task> numbers = new HashSet<>();
+    public static HashSet<String> extractNumber(List<Task> list) {
+        HashSet<String> numbers = new HashSet<>();
         for (Task task: list) {
-            task.getNumber();
-            numbers.addAll(list);
-            System.out.println(task);
+            numbers.add(task.getNumber());
         }
         return numbers;
-        }
+    }
 
     public static void main(String[] args) {
         List<Task> tasks = Arrays.asList(
@@ -21,7 +19,8 @@ public class FullSearch {
                 new Task("2", "Second desc"),
                 new Task("1", "First desc")
         );
-        extractNumber(tasks);
+        System.out.println(extractNumber(tasks));
     }
-    }
+}
+
 
