@@ -18,10 +18,6 @@ public class PassportOffice {
 
 
     public Citizen get(String passport) {
-        for ( passport : citizens.keySet()) {
-            String value = citizens.get(passport);
-            System.out.println(value);
-        }
-        return null;
+        return citizens.get(passport);
     }
 }
