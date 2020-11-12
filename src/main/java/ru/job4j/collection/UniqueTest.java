@@ -12,8 +12,10 @@ public class UniqueText {
             check.add(ab);
             ab.split("");
         }
-        for (String vg : text)
+        for (String vg : text) {
             rsl = check.contains(vg);
+            break;
+        }
         return rsl;
     }
 }
