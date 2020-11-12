@@ -17,14 +17,10 @@ public class BankService {
          findByPassport(passport);
          users.putIfAbsent(account, new ArrayList<>());
     }
-
-
-
-
-
-
-
     public User findByPassport(String passport) {
+        (String key : passport.keySet()){
+            String value = passport.(key);
+        }
         return null;
     }
 
