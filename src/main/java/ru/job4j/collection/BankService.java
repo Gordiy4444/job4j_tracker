@@ -18,8 +18,8 @@ public class BankService {
          users.putIfAbsent(account, new ArrayList<>());
     }
     public User findByPassport(String passport) {
-        (String key : passport.keySet()){
-            String value = passport.(key);
+        for(User u : users.keySet()){
+            if (u = passport);
         }
         return null;
     }
