@@ -10,12 +10,13 @@ public class Tracker {
     private int size = 0;
 
     public Item add(Item item) {
+        item.setId(ids++);
         items.add(item);
         return item;
     }
 
-    public Item[] findAll() {
-        return items.toArray(new Item[0]);
+    public Item[] findAll(List<Item>) {
+        return items;
     }
 
     public Item[] findByName(String key) {
@@ -39,8 +40,8 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
-            if (items.getId(index) == id) {
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
             }
@@ -53,7 +54,7 @@ public class Tracker {
         boolean rsl = index != -1;
         if (rsl) {
             item.setId(id);
-            items.add(item);
+            items.set(id, item);
             rsl = true;
         }
         return rsl;
@@ -63,12 +64,7 @@ public class Tracker {
         int index = indexOf(id);
         boolean res = index != -1;
         if (res) {
-        int start = index + 1;
-        int distPos = index;
-        int length = size - index;
-            System.arraycopy(items, start,items, distPos, length);
-            items[size - 1] = null;
-        size--;
+        items.remove(index);
         res = true;
         }
         return res;
