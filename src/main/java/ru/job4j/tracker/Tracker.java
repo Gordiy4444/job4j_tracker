@@ -15,7 +15,7 @@ public class Tracker {
         return item;
     }
 
-    public Item[] findAll(List<Item>) {
+    public Item[] findAll() {
         return items;
     }
 
