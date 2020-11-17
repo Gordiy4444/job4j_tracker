@@ -14,8 +14,14 @@ public class BankService {
         }
 
     public void addAccount(String passport, Account account) {
-         findByPassport(passport);
-         users.putIfAbsent(account, new ArrayList<>());
+        User user = findByPassport(passport);{
+            if (user != null){
+                users.get(user);
+                if (!users.containsKey(user)){
+                    users.putIfAbsent(account, new ArrayList<>());
+                }
+            }
+        }
     }
     public User findByPassport(String passport) {
         for(User u : users.keySet()){
