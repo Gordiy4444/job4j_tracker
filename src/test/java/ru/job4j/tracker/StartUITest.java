@@ -2,6 +2,10 @@ package ru.job4j.tracker;
 
 
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
@@ -15,9 +19,8 @@ public class StartUITest {
         );
         Tracker tracker = new Tracker();
         Output put = new ConsoleOutput();
-        UserAction[] actions = {
-                new CreateAction(put),
-                new ExitAction(put)
+        List<UserAction> actions =
+                Arrays.asList(new CreateAction(put), new ExitAction(put));
         };
         Output output = new ConsoleOutput();
 

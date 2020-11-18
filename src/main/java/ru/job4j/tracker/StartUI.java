@@ -35,9 +35,9 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
-        List<UserAction> actions = {
+        List<UserAction> actions =
                 Arrays.asList(new CreateAction(output), new ExitAction(output))
-        };
+        ;
         new StartUI(output).init(input, tracker, actions);
     }
 }
