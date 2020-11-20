@@ -18,7 +18,7 @@ public class BankService {
             if (user != null) {
 
                 List<Account> accounts = users.get(user);
-                if (!users.containsKey(account)) {
+                if  (!accounts.contains(account)) {
                     accounts.add(account);
                 }
             }
@@ -27,7 +27,7 @@ public class BankService {
 
     public User findByPassport(String passport) {
         for (User u : users.keySet()) {
-            if (u.getPassport().equals(passport)) ;
+            if (u.getPassport().equals(passport))
             {
                 return u;
             }
