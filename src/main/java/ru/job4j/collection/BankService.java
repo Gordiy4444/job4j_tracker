@@ -1,6 +1,5 @@
 package ru.job4j.collection;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
