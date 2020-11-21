@@ -3,8 +3,11 @@ package ru.job4j.tracker;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-public class Item {
+public class Item implements Comparable<Item> {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -35,8 +38,17 @@ public class Item {
 
 
     public static void main(String[] args) {
-        Item item = new Item();
+        List<Item> i = Arrays.asList(
+                new Item(1234, "B"),
+                new Item(1345, "C"),
+                new Item(9876, "A")
+        );
+        System.out.println(i);
+        Collections.sort(i);
+        System.out.println(i);
     }
+
+
 
 
     public LocalDateTime getCreated() {
