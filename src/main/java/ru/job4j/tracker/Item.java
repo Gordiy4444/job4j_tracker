@@ -5,9 +5,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class Item implements Comparable<Item> {
+public class Item implements Comparator<Item> {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -81,5 +82,11 @@ public class Item implements Comparable<Item> {
                 ", formatter=" + formatter +
                 '}';
 
+    }
+
+
+    @Override
+    public int compareTo(Item another) {
+        return Integer.compare(id, another.id);
     }
 }
