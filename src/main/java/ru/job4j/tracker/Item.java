@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import ru.job4j.collection.SortId;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -45,8 +47,9 @@ public class Item implements Comparator<Item> {
                 new Item(9876, "A")
         );
         System.out.println(i);
-        Collections.sort(i);
+        Collections.sort(i, new Sortitem());
         System.out.println(i);
+        Collections.sort(i, new SortId());
     }
 
 
