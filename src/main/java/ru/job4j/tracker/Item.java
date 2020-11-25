@@ -12,22 +12,23 @@ public class Item implements Comparable<Item> {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
     public Item() {
 
     }
 
 
-    public Item(String name){
+    public Item(String name) {
         this.name = name;
     }
 
     public Item(int id) {
-      this.id = id;
+        this.id = id;
     }
 
-    public Item (int id, String name){
-    this.id = id;
-    this.name = name;
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
 
 
     }
@@ -51,8 +52,6 @@ public class Item implements Comparable<Item> {
         Collections.sort(i, new Soit());
         System.out.println(i);
     }
-
-
 
 
     public LocalDateTime getCreated() {
@@ -90,6 +89,8 @@ public class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item another) {
-        return Integer.compare(id, another.id);
+        return Integer.compare(another.id, id);
+
+
     }
 }
