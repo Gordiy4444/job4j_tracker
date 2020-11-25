@@ -46,6 +46,10 @@ public class Item implements Comparable<Item> {
         System.out.println(i);
         Collections.sort(i, new SortI());
         System.out.println(i);
+        Collections.sort(i);
+        System.out.println(i);
+        Collections.sort(i, new Soit());
+        System.out.println(i);
     }
 
 
