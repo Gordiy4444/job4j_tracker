@@ -47,7 +47,9 @@ public class Item implements Comparable<Item> {
         System.out.println(i);
         Collections.sort(i, new SortI());
         System.out.println(i);
-        Collections.sort(i);
+        Collections.sort(i, new S());
+        System.out.println(i);
+        Collections.sort(i, new SO());
         System.out.println(i);
         Collections.sort(i, new Soit());
         System.out.println(i);
@@ -80,17 +82,9 @@ public class Item implements Comparable<Item> {
         return "Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", created=" + created +
-                ", formatter=" + formatter +
+
                 '}';
-
     }
 
 
-    @Override
-    public int compareTo(Item another) {
-        return Integer.compare(another.id, id);
-
-
-    }
 }
