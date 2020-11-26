@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Item implements Comparable<Item> {
+public class Item  {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -40,9 +40,9 @@ public class Item implements Comparable<Item> {
 
     public static void main(String[] args) {
         List<Item> i = Arrays.asList(
-                new Item(1234, "B"),
-                new Item(1345, "C"),
-                new Item(9876, "A")
+                new Item(1, "B"),
+                new Item(9, "C"),
+                new Item(2, "A")
         );
         System.out.println(i);
         Collections.sort(i, new SortI());
@@ -58,8 +58,8 @@ public class Item implements Comparable<Item> {
 
     public LocalDateTime getCreated() {
         return created;
-
     }
+
 
     public DateTimeFormatter getFormatter() {
         return formatter;

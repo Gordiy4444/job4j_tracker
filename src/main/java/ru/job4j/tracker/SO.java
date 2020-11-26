@@ -7,7 +7,7 @@ public class SO implements Comparator<Item> {
     public int compare(Item first, Item second) {
         int a = first.getId();
         int b = second.getId();
-        if (a > b){
+        if (a < b){
             return -1;
         }
         else if (b < a){
