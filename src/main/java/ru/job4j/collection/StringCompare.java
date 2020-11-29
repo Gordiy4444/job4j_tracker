@@ -8,7 +8,7 @@ public class StringCompare implements Comparator<String> {
         int a = left.length();
         int b = right.length();
         int size = Math.min(a, b);
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             char t = left.charAt(i);
             char u = right.charAt(i);
             int rsl = Character.compare(t, u);
