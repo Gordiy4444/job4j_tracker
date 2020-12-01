@@ -6,13 +6,15 @@ public class LexSort implements Comparator<String> {
 
     @Override
     public int compare(String left, String right) {
-        for (String a : left.split(".", 3)){
-            Integer.parseInt(a);
+        String[] a = left.split(("\\. "));
+        for (int i = 0; i <= 0; i++){
+            Integer g = Integer.parseInt(a[i]);
         }
-        for (String b : left.split(".", 3)) {
-            Integer.parseInt(b);
+        String[] b = right.split(("\\. "));
+        for (int in = 0; in <= 0; in++){
+            Integer h = Integer.parseInt(b[in]);
         }
 
-                return a.compareTo(b);
+        return g.compareTo(h);
     }
 }
