@@ -91,7 +91,7 @@ public class StartUITest {
                 Arrays.asList(new FindByIdAction(output), new ExitAction(output));
         new StartUI(output).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(output.toString(), is( "Menu." + ln
+        assertThat(output.toString(), is("Menu." + ln
                 + "0. FindById item" + ln
                 + "1. Exit" + ln + item + ln
                 + "Menu." + ln + "0. FindById item" + ln
@@ -116,11 +116,12 @@ public class StartUITest {
                 + "Menu." + ln + "0. FindByName item" + ln
                 + "1. Exit" + ln));
     }
+
     @Test
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"-1","0"}
+                new String[] {"-1", "0"}
         );
         Tracker tracker = new Tracker();
         List<UserAction> actions =

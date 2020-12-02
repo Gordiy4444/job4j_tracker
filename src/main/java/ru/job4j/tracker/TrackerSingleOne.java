@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 public class TrackerSingleOne {
     private static TrackerSingleOne instance;
 
-
     private TrackerSingleOne() {
     }
 
@@ -13,6 +12,5 @@ public class TrackerSingleOne {
         }
         return instance;
     }
-
 }
 

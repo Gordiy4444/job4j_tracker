@@ -6,10 +6,10 @@ import org.junit.Test;
 
 public class TrackerSingleTest  {
     @Test
-    public void whenTrackerSingle(){
+    public void whenTrackerSingle() {
         TrackerSingle one = TrackerSingle.INSTANCE;
         TrackerSingle two = TrackerSingle.INSTANCE;
 
-        assertSame(one,two);
+        assertSame(one, two);
     }
 }

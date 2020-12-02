@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
-public class Config {String name;
+public class Config {
+    private String name;
     private int position;
     private String[] properties;
 

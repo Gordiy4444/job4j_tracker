@@ -10,7 +10,6 @@ public enum TrackerSingle {
         return instance;
     }
 
-
     public static void main(String[] args) {
         TrackerSingle one = TrackerSingle.INSTANCE;
     }

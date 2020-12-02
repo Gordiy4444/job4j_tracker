@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 
-
     public void put(Task task) {
         int index = 0;
         for (Task element : tasks) {
@@ -19,11 +18,9 @@ public class PriorityQueue {
         this.tasks.add(index, task);
     }
 
-
     public Task take() {
         return tasks.poll();
     }
-
 
     public static void main(String[] args) {
         PriorityQueue one = new PriorityQueue();

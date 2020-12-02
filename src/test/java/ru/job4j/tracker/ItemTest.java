@@ -20,8 +20,6 @@ public class ItemTest {
                 new Item(24, "K"),
                 new Item(14, "O"),
                 new Item(4, "P")
-
-
         );
         Collections.sort(items, new S());
         List<Item> expected = Arrays.asList(

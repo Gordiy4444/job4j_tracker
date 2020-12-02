@@ -15,8 +15,6 @@ public class TrackerSingleTwo {
         return INSTANCE;
     }
 
-
-
     public static void main(String[] args) {
         TrackerSingleTwo tracker = TrackerSingleTwo.getInstance();
     }

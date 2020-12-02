@@ -8,10 +8,9 @@ public class ReplaceAction implements UserAction {
     }
 
     @Override
-    public String name(){
+    public String name() {
         return "Replace item";
     }
-
 
         @Override
         public boolean execute(Input input, Tracker tracker) {

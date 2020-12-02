@@ -1,6 +1,6 @@
 package ru.job4j.oop;
 
-public class Surgeon extends Doctor{
+public class Surgeon extends Doctor {
     public static void main(String[] args) {
         Profession prof = new Profession();
         System.out.println(prof.getName());
@@ -11,7 +11,5 @@ public class Surgeon extends Doctor{
         Surgeon sur = new Surgeon();
         System.out.println(sur.getName());
         System.out.println(sur.heal(pac));
-
-
     }
 }

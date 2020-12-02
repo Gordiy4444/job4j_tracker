@@ -13,7 +13,6 @@ public class TrackerSingleThree {
         return Holder.INSTANCE;
     }
 
-
     private static final class Holder {
         private static final TrackerSingleThree INSTANCE = new TrackerSingleThree();
     }

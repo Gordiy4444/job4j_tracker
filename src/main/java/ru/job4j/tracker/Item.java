@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Item  {
+public class Item {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -13,7 +13,6 @@ public class Item  {
     public Item() {
 
     }
-
 
     public Item(String name) {
         this.name = name;
@@ -26,14 +25,11 @@ public class Item  {
     public Item(int id, String name) {
         this.id = id;
         this.name = name;
-
-
     }
 
     public int getId() {
         return id;
     }
-
 
     public static void main(String[] args) {
         List<Item> i = Arrays.asList(
@@ -52,11 +48,9 @@ public class Item  {
         System.out.println(i);
     }
 
-
     public LocalDateTime getCreated() {
         return created;
     }
-
 
     public DateTimeFormatter getFormatter() {
         return formatter;
@@ -76,19 +70,26 @@ public class Item  {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-
-                '}';
+        return "Item{"
+                +
+                "id=" + id
+                +
+                ", name='" + name
+                + '\'' + '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
-        return id == item.id &&
+        return id == item.id
+                &&
                 Objects.equals(name, item.name);
     }
 

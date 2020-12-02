@@ -3,13 +3,14 @@ package ru.job4j.sort;
 public class Number {
     @Override
     public String toString() {
-        return "Number{" +
-                "number=" + number +
+        return "Number{"
+                +
+                "number=" + number
+                +
                 '}';
     }
-
     private int number;
-    public Number(int number){
+    public Number(int number) {
         this.number = number;
     }
 

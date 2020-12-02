@@ -14,7 +14,6 @@ public class ConvertMatrix2List {
         return list;
     }
 
-
     public static void main(String[] args) {
         ConvertMatrix2List list = new ConvertMatrix2List();
         int[][] input = {

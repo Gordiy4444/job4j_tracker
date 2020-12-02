@@ -13,10 +13,9 @@ public class Triangle {
         }
 
         public double period(double a, double b, double c) {
-            return (a + b + c)/2;
+            return (a + b + c) / 2;
 
         }
-
 
         public boolean exist(double ab, double ac, double bc) {
             return  ab + ac > bc && ac + bc > ab && ab + bc > ac;
@@ -29,20 +28,17 @@ public class Triangle {
             double bc = second.distance(third);
             double p = period(ab, ac, bc);
             if (this.exist(ab, ac, bc)) {
-                Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
-
+                Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
             }
             return rsl;
         }
+
     public static void main(String[] args) {
         Point one = new Point(0, 0);
         Point two = new Point(2, 0);
         Point three = new Point(2, 2);
         Triangle t = new Triangle(one, two, three);
         System.out.println(t.area());
-
-
-
-}
+    }
     }
 

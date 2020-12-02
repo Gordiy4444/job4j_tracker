@@ -1,9 +1,8 @@
 package ru.job4j.pojo;
 
-
 public class Library {
     public static void main(String[] args) {
-        Book bo = new Book("Clean code",500);
+        Book bo = new Book("Clean code", 500);
         Book go = new Book("Hed First java", 600);
         Book so = new Book("Grocking algorithms", 400);
         Book jo = new Book("Java 8", 700);
@@ -12,7 +11,7 @@ boo[0] = bo;
 boo[1] = go;
 boo[2] = so;
 boo[3] = jo;
-for (int index = 0; index < boo.length; index ++){
+for (int index = 0; index < boo.length; index++) {
     Book oo = boo[index];
     System.out.println(oo.getName() + " - " + oo.getCount());
 }
@@ -20,15 +19,16 @@ for (int index = 0; index < boo.length; index ++){
         Book bucket = boo[0];
         boo[0] = boo[3];
         boo[3] = bucket;
-        for (int index = 0; index < boo.length; index++){
+        for (int index = 0; index < boo.length; index++) {
             Book oo = boo[index];
             System.out.println(oo.getName() + " - " + oo.getCount());
     }
    System.out.println("CC");
-        for(int index = 0; index < boo.length; index++) {
+        for (int index = 0; index < boo.length; index++) {
             Book oo = boo[index];
-            if (oo.getName().equals("Clean code"))
-            System.out.println(oo.getName() + " - " + oo.getCount());
+            if (oo.getName().equals("Clean code")) {
+                System.out.println(oo.getName() + " - " + oo.getCount());
+            }
   }
 }
 }

@@ -27,12 +27,12 @@ public class Dop {
 
     @Override
     public String toString() {
-        return name + ';' +
-                gmail + ';' +
-                login + ';'
-                ;
+        return name + ';'
+                +
+                gmail + ';'
+                +
+                login + ';';
     }
-
 
     public static void main(String[] args) {
         Dop dop = new Dop("Dima", "Dima@", "DimaG");

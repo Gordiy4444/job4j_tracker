@@ -7,7 +7,7 @@ import static org.junit.Assert.assertSame;
 
 public class TrackerSingleOneTest  {
     @Test
-    public void whenTrackerSingleOne(){
+    public void whenTrackerSingleOne() {
         TrackerSingleOne one = TrackerSingleOne.getInstance();
         TrackerSingleOne two = TrackerSingleOne.getInstance();
 

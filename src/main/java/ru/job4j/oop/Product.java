@@ -12,9 +12,9 @@ public  class Product {
     @Override
     public String toString() {
         return
-                name +  +
-                + count
-                ;
+                name
+                +
+                count;
     }
 
     public String getName() {
