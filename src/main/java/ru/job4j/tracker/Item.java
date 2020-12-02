@@ -89,13 +89,11 @@ public class Item  {
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return id == item.id &&
-                Objects.equals(name, item.name) &&
-                Objects.equals(created, item.created) &&
-                Objects.equals(formatter, item.formatter);
+                Objects.equals(name, item.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, created, formatter);
+        return Objects.hash(id, name);
     }
 }
