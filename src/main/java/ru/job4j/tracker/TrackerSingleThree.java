@@ -1,3 +1,5 @@
+
+
 package ru.job4j.tracker;
 
 public class TrackerSingleThree {
@@ -5,8 +7,6 @@ public class TrackerSingleThree {
 
     public Tracker getInst() {
         return inst;
-    }
-    private TrackerSingleThree() {
     }
 
     public static TrackerSingleThree getInstance() {

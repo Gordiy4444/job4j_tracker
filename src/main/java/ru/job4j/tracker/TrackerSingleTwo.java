@@ -8,9 +8,6 @@ public class TrackerSingleTwo {
         return inst;
     }
 
-    private TrackerSingleTwo() {
-    }
-
     public static TrackerSingleTwo getInstance() {
         return INSTANCE;
     }

@@ -21,7 +21,7 @@ public class Machine {
 
     public static void main(String[] args) {
        Machine money = new Machine();
-      int [] rsl = money.change(50, 35);
+      int[] rsl = money.change(50, 35);
       for (int index = 0; index < rsl.length; index++) {
           System.out.println(rsl[index]);
       }

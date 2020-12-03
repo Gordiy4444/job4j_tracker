@@ -17,7 +17,7 @@ public class Shop {
     }
 
     public static void main(String[] args) {
-        Product prod[] = new Product[5];
+        Product[] prod = new Product[5];
         prod[0] = new Product("Milk", 10);
         prod[1] = new Product("Bread", 4);
         prod[2] = new Product("Egg", 19);

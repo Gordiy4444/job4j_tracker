@@ -9,14 +9,6 @@ public  class Product {
         this.count = count;
     }
 
-    @Override
-    public String toString() {
-        return
-                name
-                +
-                count;
-    }
-
     public String getName() {
         return name;
     }
@@ -31,5 +23,13 @@ public  class Product {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public String toString() {
+        return
+                name
+                        +
+                        count;
     }
 }
