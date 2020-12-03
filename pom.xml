@@ -8,7 +8,6 @@
     <artifactId>tracker</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
@@ -48,6 +47,8 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.1</version>
