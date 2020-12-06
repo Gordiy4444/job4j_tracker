@@ -40,5 +40,43 @@ public class DepartmentsTest {
         );
         assertThat(rsl, lessThan(0));
     }
-
+    @Test
+    public void whenUpDepartmentGoBeforeBefore() {
+        List<String> input = Arrays.asList("\"K2\"\n" +
+                "\n" +
+                "\"K2/SK1\"\n" +
+                "\n" +
+                "\"K2/SK1/SSK1\"\n" +
+                "\n" +
+                "\"K2/SK1/SSK2\"\n" +
+                "\n" +
+                "\"K1\"\n" +
+                "\n" +
+                "\"K1/SK1\"\n" +
+                "\n" +
+                "\"K1/SK1/SSK1\"\n" +
+                "\n" +
+                "\"K1/SK1/SSK2\"\n" +
+                "\n" +
+                "\"K1/SK2\"");
+        List<String> expect = Arrays.asList("\"K2\"\n" +
+                "\n" +
+                "\"K2/SK1\"\n" +
+                "\n" +
+                "\"K2/SK1/SSK1\"\n" +
+                "\n" +
+                "\"K2/SK1/SSK2\"\n" +
+                "\n" +
+                "\"K1\"\n" +
+                "\n" +
+                "\"K1/SK1\"\n" +
+                "\n" +
+                "\"K1/SK1/SSK1\"\n" +
+                "\n" +
+                "\"K1/SK1/SSK2\"\n" +
+                "\n" +
+                "\"K1/SK2\"");
+        List<String> result = DS.compare(input));
+        assertThat(result, is(expect));
+    }
 }
