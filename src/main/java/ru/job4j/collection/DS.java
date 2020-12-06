@@ -9,11 +9,12 @@ public class DS implements Comparator<String> {
     public int compare(String o1, String o2) {
         String[] a = o1.split("/");
         String[] b = o2.split("/");
-            int res = a[0].compareTo(b[0]);
+            int res = b[0].compareTo(a[0]);
             if (res = 0){
-                return;
+                return o1.compareTo(o2);
             }
-            else
-            return res;
+            else {
+                return res;
+            }
         }
     }
