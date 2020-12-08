@@ -62,6 +62,7 @@ public class DepartmentsTest {
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
                 "K1/SK2");
-        assertThat(Departments.sortDesc(input), is(expect));
+        Departments.sortDesc(input);
+        assertThat(input, is(expect));
     }
 }
