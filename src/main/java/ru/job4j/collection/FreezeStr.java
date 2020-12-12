@@ -13,13 +13,14 @@ public class FreezeStr {
             }
             map1.putIfAbsent(lef, 1);
         }
-        HashMap<Character, Integer> map2 = new HashMap<>();
-        for (Character rig : ri) {
-            if (map2.containsKey(le)) {
-                map2.put(rig, map2.get(rig) + 1);
+        for (Character re : ri) {
+            if (map1.get(re) > 1) {
+                map1.put(re, map1.get(re) - 1);
             }
-            map2.putIfAbsent(rig, 1);
+            if (map1.get(re) < 1) {
+                map1.remove(re);
+            }
         }
-        return map1.equals(map2);
+        return map1.containsValue(0);
     }
 }
