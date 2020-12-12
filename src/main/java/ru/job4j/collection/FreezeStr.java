@@ -1,52 +1,15 @@
 package ru.job4j.collection;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class FreezeStr {
     public static boolean eq(String left, String right) {
-        boolean rsl = true;
-        char[] a = left.toCharArray();
-        char[] b = right.toCharArray();
-        String c = a.toString();
-        String v = b.toString();
-        HashSet<String> check = new HashSet<>();
-        for (String ab : c) {
-            check.add(ab);
+        char[] t = left.toCharArray();
+        char[] p = right.toCharArray();
+        HashMap<Character, Integer> q = new HashMap<>();
+        for (Character l : t) {
+            q.put(l, )
         }
-
-        for (String vg : v)
-            if (!check.contains(vg)) {
-                rsl = false;
-                break;
-            }
-        return rsl;
+        return false;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
