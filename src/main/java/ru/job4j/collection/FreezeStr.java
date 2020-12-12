@@ -4,15 +4,22 @@ import java.util.HashMap;
 
 public class FreezeStr {
     public static boolean eq(String left, String right) {
-        char[] t = left.toCharArray();
-        char[] p = right.toCharArray();
-        HashMap<Character, Integer> q = new HashMap<>();
-        for (Character l : t) {
-            if (q.containsKey(l)){
-                q.put(l,1 + 1);
+        char[] le = left.toCharArray();
+        char[] ri = right.toCharArray();
+        HashMap<Character, Integer> map1 = new HashMap<>();
+        for (Character lef : le) {
+            if (map1.containsKey(le)) {
+                map1.put(lef, map1.get(lef) + 1);
             }
-            q.putIfAbsent(l, 1);
+            map1.putIfAbsent(lef, 1);
         }
-        return false;
+        HashMap<Character, Integer> map2 = new HashMap<>();
+        for (Character rig : ri) {
+            if (map2.containsKey(le)) {
+                map2.put(rig, map2.get(rig) + 1);
+            }
+            map2.putIfAbsent(rig, 1);
+        }
+        return map1.equals(map2);
     }
 }
