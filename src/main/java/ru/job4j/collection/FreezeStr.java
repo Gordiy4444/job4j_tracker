@@ -8,7 +8,10 @@ public class FreezeStr {
         char[] p = right.toCharArray();
         HashMap<Character, Integer> q = new HashMap<>();
         for (Character l : t) {
-            q.put(l, )
+            if (q.containsKey(l)){
+                q.put(l,1 + 1);
+            }
+            q.putIfAbsent(l, 1);
         }
         return false;
     }
