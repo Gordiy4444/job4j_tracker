@@ -14,13 +14,16 @@ public class FreezeStr {
             map1.putIfAbsent(lef, 1);
         }
         for (Character re : ri) {
-            if (map1.get(re) > 1) {
-                map1.put(re, map1.get(re) - 1);
-            }
-            if (map1.get(re) < 1) {
-                map1.remove(re);
+            Integer integer = map1.get(re);
+            if (integer != null) {
+                if (integer == 1) {
+                    map1.remove(re);
+                } else if (integer > 1) {
+                    map1.put(re, map1.get(re) - 1);
+                }
             }
         }
-        return map1.containsValue(0);
-    }
+        return map1.size() == 0;
+        }
+
 }
