@@ -11,7 +11,7 @@ public class SearchAtt {
         Predicate<Attachment> init = new Predicate<Attachment>() {
             @Override
             public boolean test(Attachment attachment) {
-                return false;
+                return attachment.getSize() > 100;
             }
         };
         return filter(list, init);
@@ -21,8 +21,7 @@ public class SearchAtt {
         Predicate<Attachment> init = new Predicate<Attachment>() {
             @Override
             public boolean test(Attachment attachment) {
-
-                return false;
+                return attachment.getName().contains("bug");
             }
         };
         return filter(list, init);
