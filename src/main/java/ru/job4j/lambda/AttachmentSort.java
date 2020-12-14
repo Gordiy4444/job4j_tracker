@@ -21,16 +21,19 @@ public class AttachmentSort {
         };
         attachments.sort(comparator);
         System.out.println(attachments);
-    }
 
-    Comparator comparator2 = new Comparator() {
-        @Override
-        public int compare(Object o1, Object o2) {
-            Attachment left = (Attachment) o1;
-            Attachment right = (Attachment) o2;
-            return right.getName().compareTo(left.getName());
-        }
-    };
-        attachments.sort(comparator2);
+
+        Comparator comparator2 = new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                Attachment left = (Attachment) o1;
+                Attachment right = (Attachment) o2;
+                return right.getName().compareTo(left.getName());
+            }
+        };
+
+        Comparator<Attachment> comparator3 = (left, right) ->  right.getName().compareTo(left.getName());
+        attachments.sort(comparator3);
         System.out.println(attachments);
+    }
 }
