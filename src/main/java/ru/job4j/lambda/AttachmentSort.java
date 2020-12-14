@@ -32,7 +32,10 @@ public class AttachmentSort {
             }
         };
 
-        Comparator<Attachment> comparator3 = (left, right) ->  right.getName().compareTo(left.getName());
+        Comparator<Attachment> comparator3 = (left, right) -> {
+            System.out.println("compare - " + left.getName() + " : " + right.getName());
+            return left.getName().compareTo(right.getName());
+        };
         attachments.sort(comparator3);
         System.out.println(attachments);
     }
