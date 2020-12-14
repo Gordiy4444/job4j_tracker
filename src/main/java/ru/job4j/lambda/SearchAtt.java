@@ -14,6 +14,7 @@ public class SearchAtt {
                 return false;
             }
 
+
     public static List<Attachment> filterName(List<Attachment> list) {
         Predicate<Attachment> init = new Predicate<Attachment>() {
             @Override
@@ -21,10 +22,11 @@ public class SearchAtt {
                 return false;
             }
 
-    private static int filter(List<Attachment> list, Predicate<Attachment> init) {
+
+    private static boolean filter(List<Attachment> list, Predicate<Attachment> init) {
         List<Attachment> rsl = new ArrayList<>();
         for (Attachment att : list) {
-            if (att.init.test) {
+            if (init.test(att)) {
                 rsl.add(att);
             }
         }
