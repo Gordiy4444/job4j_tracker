@@ -13,23 +13,30 @@ public class SearchAtt {
             public boolean test(Attachment attachment) {
                 return false;
             }
-
+        };
+        return filter(list, init);
+    }
 
     public static List<Attachment> filterName(List<Attachment> list) {
         Predicate<Attachment> init = new Predicate<Attachment>() {
             @Override
             public boolean test(Attachment attachment) {
+
                 return false;
             }
+        };
+        return filter(list, init);
+    }
 
 
-    private static boolean filter(List<Attachment> list, Predicate<Attachment> init) {
-        List<Attachment> rsl = new ArrayList<>();
-        for (Attachment att : list) {
-            if (init.test(att)) {
-                rsl.add(att);
+            private static boolean filter(List<Attachment> list, Predicate<Attachment> init) {
+                List<Attachment> rsl = new ArrayList<>();
+                for (Attachment att : list) {
+                    if (init.test(att)) {
+                        rsl.add(att);
+                    }
+                }
+                return rsl;
             }
         }
-        return rsl;
-    }
-}
+
