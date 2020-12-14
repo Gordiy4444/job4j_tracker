@@ -29,7 +29,7 @@ public class SearchAtt {
     }
 
 
-            private static boolean filter(List<Attachment> list, Predicate<Attachment> init) {
+            private static List<Attachment> filter(List<Attachment> list, Predicate<Attachment> init) {
                 List<Attachment> rsl = new ArrayList<>();
                 for (Attachment att : list) {
                     if (init.test(att)) {
