@@ -22,10 +22,10 @@ public class DiapasonF {
         return r;
     }
 
-    public static List<Double> diapasonp(int start, int end, int power, BinaryOperator<Double> func) {
+    public static List<Double> diapasonp(int start, int end, Function<Double, Double> func) {
         List<Double> r = new ArrayList<>();
         for (int i = start; i < end; i++) {
-            r.add(func.apply((double)i,(double)power));
+            r.add(func.apply((double)i));
         }
         return r;
     }
