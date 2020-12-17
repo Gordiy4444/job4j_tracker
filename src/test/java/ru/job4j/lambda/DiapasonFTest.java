@@ -24,8 +24,8 @@ public class DiapasonFTest {
     }
     @Test
     public void whenpowerFunctionThenLinearResults() {
-        List<Double> result = DiapasonF.diapasonp(5, 8,  x -> Math.pow(x, 2));
-        List<Double> expected = Arrays.asList(25.0, 36.0, 49.0);
+        List<Double> result = DiapasonF.diapasonp(5, 8,  x -> Math.pow(2, x));
+        List<Double> expected = Arrays.asList(32.0, 64.0, 128.0);
         assertThat(result, is(expected));
     }
 }
