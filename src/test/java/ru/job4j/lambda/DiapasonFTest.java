@@ -16,4 +16,16 @@ public class DiapasonFTest {
         assertThat(result, is(expected));
     }
 
+    @Test
+    public void whensquareFunctionThenLinearResults() {
+        List<Double> result = DiapasonF.diapason(5, 8, x ->x * x + 1);
+        List<Double> expected = Arrays.asList(26D, 37D, 50D);
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void whenpowerFunctionThenLinearResults() {
+        List<Double> result = DiapasonF.diapasonp(5, 8, 2, x -> Math.pow(x, power));
+        List<Double> expected = Arrays.asList(26D, 37D, 50D);
+        assertThat(result, is(expected));
+    }
 }
