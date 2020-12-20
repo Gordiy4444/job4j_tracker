@@ -8,19 +8,19 @@ public class Address {
    public int home;
    public int apartment;
 
-   public String getCity() {
+   private String getCity() {
       return city;
    }
 
-   public String getStreet() {
+   private String getStreet() {
       return street;
    }
 
-   public int getHome() {
+   private int getHome() {
       return home;
    }
 
-   public int getApartment() {
+   private int getApartment() {
       return apartment;
    }
 
