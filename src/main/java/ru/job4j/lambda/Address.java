@@ -1,10 +1,42 @@
 package ru.job4j.lambda;
 
+import java.util.Objects;
+
 public class Address {
-    private String city;
-    private String street;
+   public String city;
+   public String street;
+   public int home;
+   public int apartment;
 
-    private int home;
+   public String getCity() {
+      return city;
+   }
 
-    private int apartment;
+   public String getStreet() {
+      return street;
+   }
+
+   public int getHome() {
+      return home;
+   }
+
+   public int getApartment() {
+      return apartment;
+   }
+
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Address address = (Address) o;
+      return home == address.home &&
+              apartment == address.apartment &&
+              city.equals(address.city) &&
+              street.equals(address.street);
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(city, street, home, apartment);
+   }
 }
