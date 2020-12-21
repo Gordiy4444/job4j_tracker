@@ -1,10 +1,20 @@
 package ru.job4j.lambda;
 
-
-import java.util.List;
+import java.util.Objects;
 
 public class Profile {
-     public Address address;
+   private Address address;
 
+   public Profile(Address address) {
+      this.address = address;
+   }
+
+   public Address getAddress() {
+      return address;
+   }
 }
+
+
+
+
 
