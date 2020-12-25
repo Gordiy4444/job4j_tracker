@@ -13,8 +13,8 @@ public class Card {
 
     public static void main(String[] args) {
         Stream.of(Suit.values())// создаю поток  Diamonds, Hearts, Spades, Clubs
-                .flatMap(a -> Stream.of(Value.values())//Добавляю к этоу потоку
-                        .map(b -> a + " " + b))
+                .flatMap(a -> Stream.of(Value.values())
+                        .map(b -> a + " " + b)) // Присваиаваю к каждому элементу потока Diamonds, Hearts, Spades, Clubs поток  V_6, V_7, V_8
                 .forEach(System.out::println);
     }
     }
