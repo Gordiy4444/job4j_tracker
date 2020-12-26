@@ -1,9 +1,6 @@
 package ru.job4j.collection;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
@@ -13,9 +10,9 @@ public class BankService {
     }
 
     public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport);
+       Optional <User> user = Optional.of(findByPassport(passport));
 
-        if (user != null) {
+        if (user.isPresent()) {
 
             List<Account> accounts = users.get(user);
             if (!accounts.contains(account)) {
@@ -34,8 +31,8 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        User user = findByPassport(passport);
-        if (user != null) {
+        Optional <User> user = Optional.of(findByPassport(passport));
+        if (user.isPresent()) {
            return users.get(user)
                    .stream()
                    .filter(s -> s.getRequisite().equals(requisite))
@@ -48,11 +45,11 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
-        Account a = findByRequisite(srcPassport, srcRequisite);
-        Account b = findByRequisite(destPassport, destRequisite);
-        if (a != null && b != null && a.getBalance() >= (amount)) {
-            a.setBalance(a.getBalance() - amount);
-            b.setBalance(b.getBalance() + amount);
+        Optional <Account> a = Optional.of(findByRequisite(srcPassport, srcRequisite));
+        Optional <Account> b = Optional.of(findByRequisite(destPassport, destRequisite));
+        if (a.isPresent() && b.isPresent() && a.get().getBalance() >= (amount)) {
+            a.get().setBalance(a.get().getBalance() - amount);
+            b.get().setBalance(b.get().getBalance() + amount);
             return true;
         }
         return rsl;
