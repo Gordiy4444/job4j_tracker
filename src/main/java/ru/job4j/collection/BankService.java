@@ -3,53 +3,61 @@ package ru.job4j.collection;
 import java.util.*;
 
 public class BankService {
-    private Map<User, List<Account>> users = new HashMap<>();
+        private Map<User, List<Account>> users = new HashMap<>();
 
-    public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<>());
-    }
-
-    public void addAccount(String passport, Account account) {
-       Optional <Optional<User>> user = Optional.of(findByPassport(passport));
-
-        if (user.isPresent()) {
-
-            List<Account> accounts = users.get(user);
-            if (!accounts.contains(account)) {
-                accounts.add(account);
-            }
+        public void addUser(User user) {
+            users.putIfAbsent(user, new ArrayList<>());
         }
 
-    }
+        public void addAccount(String passport, Account account) {
+            Optional<User> user = findByPassport(passport);
+            if (user.isPresent()) {
+                List<Account> accounts = users.get(user.get());
+                if (!accounts.contains(account)) {
+                    accounts.add(account);
+                }
+            }
 
-    public Optional<User> findByPassport(String passport) {
-        return users.keySet()
-                .stream()
-                .filter(s -> s.getPassport().equals(passport))
-                .findFirst();
+        }
 
-    }
+        public Optional<User> findByPassport(String passport) {
+            Optional<User> us = users.keySet()
+                    .stream()
+                    .filter(s -> s.getPassport().equals(passport))
+                    .findFirst();
+            if (us.isPresent()) {
+                System.out.println(us.get());
+            } else {
+                System.out.println("Element not found.");
+            }
+            return us;
+        }
 
-    public Optional<Account> findByRequisite(String passport, String requisite) {
-        Optional<User> user = findByPassport(passport);
-        if (user.isPresent()) {
-            return users.get(user.get())
+        public Optional<Account> findByRequisite(String passport, String requisite) {
+            Optional<User> user = findByPassport(passport);
+            Optional<Account> us = user.flatMap(value -> users.get(value)
                     .stream()
                     .filter(s -> s.getRequisite().equals(requisite))
-                    .findFirst();
+                    .findFirst());
+            if (us.isPresent()) {
+                System.out.println(us.get());
+            } else {
+                System.out.println("Element not found.");
+            }
+            return us;
         }
-        return Optional.empty();
-    }
-    public boolean transferMoney(String srcPassport, String srcRequisite,
-                                 String destPassport, String destRequisite, double amount) {
-        boolean rsl = false;
-        Optional <Optional<Account>> a = Optional.of(findByRequisite(srcPassport, srcRequisite));
-        Optional <Optional<Account>> b = Optional.of(findByRequisite(destPassport, destRequisite));
-        if (a.isPresent() && b.isPresent() && a.get().get().getBalance() >= (amount)) {
-            a.get().get().setBalance(a.get().get().getBalance() - amount);
-            b.get().get().setBalance(b.get().get().getBalance() + amount);
-            return true;
+
+
+        public boolean transferMoney(String srcPassport, String srcRequisite,
+                                     String destPassport, String destRequisite, double amount) {
+            boolean rsl = false;
+            Optional<Account> a = findByRequisite(srcPassport, srcRequisite);
+            Optional<Account> b = findByRequisite(destPassport, destRequisite);
+            if (a.isPresent() && b.isPresent() && a.get().getBalance() >= (amount)) {
+                a.get().setBalance(a.get().getBalance() - amount);
+                b.get().setBalance(b.get().getBalance() + amount);
+                return true;
+            }
+            return rsl;
         }
-        return rsl;
     }
-}
