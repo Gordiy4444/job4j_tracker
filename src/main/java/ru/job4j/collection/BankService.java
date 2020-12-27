@@ -10,7 +10,7 @@ public class BankService {
     }
 
     public void addAccount(String passport, Account account) {
-       Optional <User> user = Optional.of(findByPassport(passport));
+       Optional <Optional<User>> user = Optional.of(findByPassport(passport));
 
         if (user.isPresent()) {
 
@@ -22,7 +22,7 @@ public class BankService {
 
     }
 
-    public User findByPassport(String passport) {
+    public Optional<User> findByPassport(String passport) {
         return users.keySet()
                 .stream()
                 .filter(s -> s.getPassport().equals(passport))
@@ -31,7 +31,7 @@ public class BankService {
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        Optional <User> user = Optional.of(findByPassport(passport));
+        Optional <Optional<User>> user = Optional.of(findByPassport(passport));
         if (user.isPresent()) {
            return users.get(user)
                    .stream()
