@@ -30,14 +30,13 @@ public class BankService {
 
     }
 
-    public Account findByRequisite(String passport, String requisite) {
+    public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional <Optional<User>> user = Optional.of(findByPassport(passport));
         if (user.isPresent()) {
            return users.get(user)
                    .stream()
                    .filter(s -> s.getRequisite().equals(requisite))
-                   .findFirst()
-                   .orElse(null);
+                   .findFirst();
         }
             return Optional.empty();
         }
@@ -45,11 +44,11 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
-        Optional <Account> a = Optional.of(findByRequisite(srcPassport, srcRequisite));
-        Optional <Account> b = Optional.of(findByRequisite(destPassport, destRequisite));
-        if (a.isPresent() && b.isPresent() && a.get().getBalance() >= (amount)) {
-            a.get().setBalance(a.get().getBalance() - amount);
-            b.get().setBalance(b.get().getBalance() + amount);
+        Optional <Optional<Account>> a = Optional.of(findByRequisite(srcPassport, srcRequisite));
+        Optional <Optional<Account>> b = Optional.of(findByRequisite(destPassport, destRequisite));
+        if (a.isPresent() && b.isPresent() && a.get().get().getBalance() >= (amount)) {
+            a.get().get().setBalance(a.get().get().getBalance() - amount);
+            b.get().get().setBalance(b.get().get().getBalance() + amount);
             return true;
         }
         return rsl;
