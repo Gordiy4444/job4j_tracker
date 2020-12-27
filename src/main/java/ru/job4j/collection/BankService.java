@@ -26,8 +26,8 @@ public class BankService {
         return users.keySet()
                 .stream()
                 .filter(s -> s.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
+
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -39,7 +39,7 @@ public class BankService {
                    .findFirst()
                    .orElse(null);
         }
-            return null;
+            return Optional.empty();
         }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
