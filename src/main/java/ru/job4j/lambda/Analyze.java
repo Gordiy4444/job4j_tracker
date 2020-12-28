@@ -1,5 +1,6 @@
 package ru.job4j.lambda;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -23,7 +24,10 @@ public class Analyze {
 
 
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
-        return List.of();
+        return stream.flatMap(x -> x.getSubjects().stream())
+                .collect(Collectors.groupingBy(Subject::getName, Collectors.averagingDouble(Subject::getScore)))
+                .entrySet().stream();
+
     }
 
     public static Tuple bestStudent(Stream<Pupil> stream) {
