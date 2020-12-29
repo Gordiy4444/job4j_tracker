@@ -35,9 +35,9 @@ public class Analyze {
     public static Tuple bestStudent(Stream<Pupil> stream) {
         return stream.map(x -> new Tuple(x.getName(), stream.flatMap(y -> y.getSubjects().stream())
                 .mapToInt(Subject::getScore)
-                .sum()
-                .orElse()))
-                .max(Integer::compare);
+                .sum()))
+                .max(Integer::compare)
+                .orElse(0);
 
     }
 
