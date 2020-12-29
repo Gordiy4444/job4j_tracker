@@ -36,10 +36,8 @@ public class Analyze {
         return stream.map(x -> new Tuple(x.getName(), stream.flatMap(y -> y.getSubjects().stream())
                 .mapToInt(Subject::getScore)
                 .sum()))
-                .max(x -> Integer.compare(x, (t -> new Tuple(t.getName(), stream.flatMap(y -> y.getSubjects().stream())
-                        .mapToInt(Subject::getScore)
-                        .sum()))
-                .orElse(null);
+                .max((x, y) -> Integer.compare(x.getScore(), y.getScore())
+                .orElse(null));
 
     }
 
