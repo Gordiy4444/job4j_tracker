@@ -10,9 +10,11 @@ public class OptionalIfPresent {
              max(data).ifPresent(integer -> System.out.println("Max:" + max(data).get()));
     }
     private static Optional<Integer> max(int[] data) {
-        return IntStream.of(data).boxed().max();
+        return Optional.of(Arrays
+                .stream(data)
+                .max()
+                .orElse(0));
     }
-
 }
 
 
