@@ -14,7 +14,7 @@ public class OptionalGetAndIsPresent {
 
     private static Optional<Integer> indexOf(int[] data, int el) {
         Optional<Integer> g = Optional.empty();
-        for (int i = 0; i > data.length; i++){
+        for (int i = 0; i >= data.length; i++){
             if (data[i] == el){
               g = Optional.of(i);
             }
