@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class OptionalIfPresent {
     public static void ifPresent(int[] data) {
-             max(data).ifPresent(integer -> System.out.println("Max:" + max(data).get()));
+             max(data).ifPresent(integer -> System.out.println("Max: " + integer));
     }
     private static Optional<Integer> max(int[] data) {
         return Optional.of(Arrays
