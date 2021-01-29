@@ -1,7 +1,6 @@
 package ru.job4j.lambda;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -42,7 +41,8 @@ public class CountingMethod {
     }
 
     public static Map<String, Long> groupAndCount(List<Worker> workers) {
-        return workers.stream().collect(Collectors.groupingBy(Worker::getCompany, Collectors.counting()));
+
+        return workers.stream().map(e -> e.company).(Collectors.groupingBy(Function.identity(),Collectors.counting()));
     }
 
 }
