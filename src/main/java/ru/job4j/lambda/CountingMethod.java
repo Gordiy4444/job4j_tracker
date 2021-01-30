@@ -42,7 +42,11 @@ public class CountingMethod {
 
     public static Map<String, Long> groupAndCount(List<Worker> workers) {
 
-        return workers.stream().map(e -> e.company).(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        return workers
+                .stream()
+                .map(Worker::getCompany)
+                .(Collectors.groupingBy(Company::getName,
+                Collectors.counting()));
     }
 
 }
