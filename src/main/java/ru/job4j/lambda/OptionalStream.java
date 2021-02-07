@@ -40,7 +40,7 @@ public class OptionalStream {
     }
 
     public static List<PhoneNumber> collectNumber(List<User> users, int id, String region) {
-        return users.stream().filter(x -> x.equals(id)).findFirst().stream().flatMap(x -> x.getNumbers().stream().map(c ->c.phone).filter(r - r.startWith)).collect(Collectors.toList());
+        return users.stream().filter(x -> x.equals(id)).findFirst().stream().flatMap(x -> x.getNumbers().stream().map(c ->c.getPhone()).filter(y -> y.startsWith(region)).collect(Collectors.toList());
     }
 
 }
